@@ -25,6 +25,14 @@ app.addModule('count', function () {
 		});
 	};
 });
+app.addModule('faq', function () {
+	this.init = function () {
+		$('.faq_heading').click(function () {
+			$(this).toggleClass('active');
+			$(this).next().slideToggle(300);
+		})
+	};
+});
 app.addModule('filter', function () {
 	this.init = function () {
 		$('.filter_heading').click(function () {
@@ -46,6 +54,18 @@ app.addModule('left-menu', function () {
 				$('.left-menu_content').toggleClass('hidden');
 			}
 		})
+	};
+});
+app.addModule('main-menu', function () {
+	this.init = function () {
+		$('.main-menu_block').click(function () {
+			$('.main-menu').removeClass('inactive');
+			$('.main-menu-fixed').addClass('active');
+		});
+		$('.main-menu-fixed').click(function () {
+			$('.main-menu').addClass('inactive');
+			$('.main-menu-fixed').removeClass('active');
+		});
 	};
 });
 app.addModule('mobile-load', function () {
